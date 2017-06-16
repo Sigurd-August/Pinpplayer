@@ -30,10 +30,9 @@
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Me</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
-									<li><a href="toDraft" target="main" class="">My Profile</a></li>
-									<li><a href="toDdghtList" target="main" class="">Contract to be finalized</a></li>
-									<li><a href="toDrafted" target="main" class="">Finalized Contract</a></li>
-									<li><a href="toQueryProcess" target="main" class="">Query Process</a></li>
+									<li><a href="toMyProfile" target="main" class="">My Profile</a></li>
+									<li><a href="toMyMusic" target="main" class="">My Music</a></li>
+									<li><a href="toFriend" target="main" class="">Friend</a></li>
 								</ul>
 							</div>
 						</li>
