@@ -42,7 +42,7 @@ public class UserService {
 	public int getRole(int userId) throws AppException{
 		int type = -1;
 		try{
-			User user = new User("Mu","123456");
+			User user = new User();
 			user = userDao.getById(userId);
 			type = user.getType();
 		} catch(AppException e){

@@ -21,7 +21,7 @@ public class RegisterServlet extends HttpServlet{
 		boolean flag = false;
 		String message = "";
 		try{
-			User user = new User("Mu","123456");
+			User user = new User();
 			UserService userService = new UserService();
 			user.setName(name);
 			user.setPassword(password);

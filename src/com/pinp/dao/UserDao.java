@@ -10,7 +10,6 @@ import com.pinp.utils.AppException;
  */
 public interface UserDao {
 	
-	
 	public boolean isExist(String name) throws AppException;
 	
 	public boolean add(User user) throws AppException;
@@ -20,5 +19,7 @@ public interface UserDao {
 	public User getById(int id) throws AppException;
 	
 	public List<Integer> getIds() throws AppException;
+	
+	public boolean setUserDel(int user_id) throws AppException;
 	
 }

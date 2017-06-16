@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import com.pinp.dao.UserDao;
@@ -142,7 +143,7 @@ public class UserDaoImpl implements UserDao{
 					
 					// Save user information in Pole entity object when queried out resultSet
 					if (rs.next()) {
-						user = new User(rs.getString("name"),rs.getString("password")); // Instantiate user objects
+						user = new User(); // Instantiate user objects
 						// Set value to user object
 						user.setId(rs.getInt("id"));
 						user.setName(rs.getString("name"));
@@ -196,4 +197,44 @@ public class UserDaoImpl implements UserDao{
 				return ids;
 	}
 
+	@SuppressWarnings("resource")
+	@Override
+	public boolean setUserDel(int user_id) throws AppException {
+		boolean flag = false;// Operation flag
+		// Declare database connection object, pre-compiled object
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		try {
+			// Create database connection
+			conn = DBUtil.getConnection();
+			// Declare sql:update contract information according to contract id
+			String sql = "update t_user set del = 1 where id = ?";
+			// Pre-compiled sql, and set the parameter values
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, user_id);
+
+			// Execute update,return affected rows
+			flag = psmt.execute();
+			
+			if (flag == true) {// If affected lines greater than 0, so update success
+				String content = "User " + user_id + " update data in t_user";
+				String sql5 = "insert into t_log(time,content)values(?,?,?)";
+				psmt = conn.prepareStatement(sql5); // pre-compiled sql
+				SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd   hh:mm:ss");   
+				String date = sDateFormat.format(new java.util.Date());  
+				psmt.setInt(1, user_id);
+				psmt.setString(2, date);
+				psmt.setString(3, content);
+				psmt.executeUpdate();
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+			throw new AppException("dao.impl.ContractDaoImpl.updateById");
+		} finally {
+			// Close database operation object
+			DBUtil.closeStatement(psmt);
+			DBUtil.closeConnection(conn);
+		}
+		return flag;
+	}
 }

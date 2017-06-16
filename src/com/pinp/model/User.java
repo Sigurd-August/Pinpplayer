@@ -1,19 +1,40 @@
 package com.pinp.model;
 
 public class User {
-	private int id;
+	private int id;			    //ID
 	private String name;		//User name
 	private String password;	//Password
-	private int del;            //0 - deleted 1 - not
-	private int type;           //0 - user    1 - admin
+	private String secPassword; //secondary password
+	private String email;
+	private String token;
+	private int type;
+	private Long activateTime;
+	private String createdate;
+	private int status;
+	private int del;			//Delete status(0-Not deleted, 1-Deleted)
 	
-	public User(String name,String password){
-		this.name=name;
-		this.password=password;
-		del = 1;
-		this.type = 0;
+	
+	/**
+	 * No-arg constructor assigns initial values to object attributes
+	 */
+	public User(){
+		this.id = 0;
+		this.name = "";
+		this.password = "";
+		this.secPassword="";
+		this.email = "";
+		this.token = "";
+		this.activateTime = Long.parseLong("0");
+		this.type=0;
+		this.createdate = "";
+		this.status = 0;
+		this.del = 0;
 	}
-	
+
+	/*
+	 *  Provide setter and getter methods for attributes
+	 *  setter is used for setting the attribute's value, getter is used for getting the attribute's value
+	 */
 	public int getId() {
 		return id;
 	}
@@ -37,13 +58,15 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	public int getType(){
-		return type;
+
+	public int getType() {
+		return this.type;
 	}
-	public void setType(int type){
+
+	public void setType(int type) {
 		this.type = type;
 	}
+	
 	public int getDel() {
 		return del;
 	}
@@ -51,4 +74,56 @@ public class User {
 	public void setDel(int del) {
 		this.del = del;
 	}
+
+	public String getSecPassword()
+	{
+		return secPassword;
+	}
+	
+	public void setSecPassword(String secPassword)
+	{
+		this.secPassword=secPassword;
+	}
+
+	public void setEmail(String email)
+	{
+		this.email = email;
+	}
+	public String getEmail()
+	{
+		return email;
+	}
+	public void setToken(String token)
+	{
+		this.token = token;
+	}
+	public String getToken()
+	{
+		return token;
+	}
+	public void setActivateTime(Long activateTime)
+	{
+		this.activateTime = activateTime;
+	}
+	public Long getActivateTime()
+	{
+		return activateTime;
+	}
+	public void setCreateDate(String createdate)
+	{
+		this.createdate = createdate;
+	}
+	public String getCreateDate()
+	{
+		return createdate;
+	}
+	public void setStatus(int status)
+	{
+		this.status = status;
+	}
+	public int getStatus()
+	{
+		return status;
+	}
+	
 }
