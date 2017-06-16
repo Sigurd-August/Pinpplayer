@@ -43,7 +43,7 @@
 		</div>
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
-		<iframe src="result.jsp" name="main" scrolling="auto" style="position:absolute;left:260;" height="100%" width="100%"></iframe>
+		<iframe src="result.jsp" name="main" scrolling="auto" style="position:relative;left:0;" height="100%" width="100%"></iframe>
 		<!-- END MAIN -->
 		<div class="clearfix"></div>
 		<footer>

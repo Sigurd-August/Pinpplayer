@@ -14,4 +14,6 @@ public interface MvDao {
 	/**get all of id of the mv which is not be deleted*/
 
 	public List<Mv> getbynums(int num) throws AppException;
+
+	boolean addMv(List<Mv> mList) throws AppException;
 }
