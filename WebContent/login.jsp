@@ -45,8 +45,8 @@
 
 <body>
 <div class="cotn_principal">
-<center class="video"><video src=".\mv\<%= %>" class="video" controls="controls">
-	<!-- <section id="rt-showcase-surround">
+ <center class="video">
+	 <section id="rt-showcase-surround">
 		<div id="rt-showcase" class="slider-container rt-overlay-dark">
 			<div class="rt-container slider-container">
 				<div class="rt-grid-12 rt-alpha rt-omega">
@@ -121,7 +121,7 @@
 				<div class="clear"></div>
 			</div>
 		</div>
-	</section> -->
+	</section> 
 </center>
   <img class="logo" src="./images/PINP_4.png"></img>
   <div class="cont_centrar">
@@ -172,6 +172,8 @@
           <table>
           <tr><td>
           <input type="text" name="rname" id="rname" placeholder="User" /></td></tr>
+          <tr><td>
+          <input type="text" name="email" id="email" placeholder="Email" /></td></tr>
           <tr><td>
           <input type="password" name="rpassword" id="rpassword" placeholder="Password" /></td></tr>
           <tr><td>

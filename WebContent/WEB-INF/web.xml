@@ -14,6 +14,10 @@
 		<!-- The access path of Servlet -->
 		<url-pattern>/register</url-pattern>
 	</servlet-mapping>
+
+
+
+
 	<!-- Configure the access of LoginServlet -->
 	<servlet>
 		<!-- Set Servlet name -->
@@ -28,6 +32,23 @@
 		<!-- The access path of Servlet -->
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
+<!-- Configure the access of toOperator -->
+	<servlet>
+		<!-- Set Servlet name -->
+		<servlet-name>toOperator</servlet-name>
+		<!-- Set the Servlet class that processing requests: complete package path 
+			+ class name -->
+		<servlet-class>com.pinp.web.ToOperatorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<!-- The Servlet name should keep consistent as above-mentioned -->
+		<servlet-name>toOperator</servlet-name>
+		<!-- The access path of Servlet -->
+		<url-pattern>/toOperator</url-pattern>
+	</servlet-mapping>
+
+
+
 	<!--Welcome Page-->
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
